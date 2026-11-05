@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Polska Nostalgia Player</title>
+
+  <link
+    rel="stylesheet"
+    href="/player.css"
+  >
+</head>
+
+<body>
+  <main class="player-page">
+    <section class="player-card">
+      <div class="logo">
+        ♪
+      </div>
+
+      <span class="eyebrow">
+        SPOTIFY CONNECT
+      </span>
+
+      <h1>
+        Polska Nostalgia Player
+      </h1>
+
+      <p class="description">
+        Prywatny odtwarzacz Spotify dla systemu AUTO QUIZ.
+      </p>
+
+      <div class="status-box">
+        <span class="status-label">
+          STATUS
+        </span>
+
+        <strong
+          id="playerStatus"
+          class="status waiting"
+        >
+          Inicjalizacja...
+        </strong>
+      </div>
+
+      <div class="device-box">
+        <span class="status-label">
+          URZĄDZENIE
+        </span>
+
+        <strong id="deviceName">
+          POLSKA NOSTALGIA PLAYER
+        </strong>
+
+        <span id="deviceId">
+          Oczekiwanie na Spotify...
+        </span>
+      </div>
+
+      <div
+        id="trackBox"
+        class="track-box hidden"
+      >
+        <img
+          id="trackCover"
+          class="cover"
+          alt="Okładka"
+        >
+
+        <div>
+          <span class="status-label">
+            TERAZ ODTWARZANE
+          </span>
+
+          <strong id="trackTitle">
+            -
+          </strong>
+
+          <span id="trackArtist">
+            -
+          </span>
+        </div>
+      </div>
+
+      <button
+        id="activateButton"
+        class="activate-button"
+        type="button"
+      >
+        Aktywuj odtwarzacz
+      </button>
+
+      <div
+        id="errorBox"
+        class="error-box hidden"
+      ></div>
+
+      <p class="information">
+        Pozostaw tę kartę otwartą podczas testowania AUTO QUIZ.
+      </p>
+    </section>
+  </main>
+
+  <script
+    src="https://sdk.scdn.co/spotify-player.js"
+  ></script>
+
+  <script src="/player.js"></script>
+</body>
+</html>

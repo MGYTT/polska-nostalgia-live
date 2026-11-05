@@ -1,0 +1,1588 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+  >
+
+  <meta
+    name="theme-color"
+    content="#120a25"
+  >
+
+  <meta
+    name="color-scheme"
+    content="dark"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow, noarchive"
+  >
+
+  <title>
+    Polska Nostalgia LIVE - Overlay v8.0
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="/overlay.css"
+  >
+</head>
+
+<body>
+  <main
+    id="overlay"
+    class="overlay phase-idle stage-none connection-waiting"
+    data-version="8.0"
+    aria-live="polite"
+  >
+    <div
+      id="visualEnvironment"
+      class="visual-environment"
+      aria-hidden="true"
+    >
+      <div
+        id="backgroundCover"
+        class="background-cover"
+      ></div>
+
+      <div class="background-base"></div>
+      <div class="background-color-wash"></div>
+      <div class="background-depth"></div>
+      <div class="background-vignette"></div>
+      <div class="background-noise"></div>
+      <div class="background-grid"></div>
+
+      <div class="aurora aurora-red"></div>
+      <div class="aurora aurora-purple"></div>
+      <div class="aurora aurora-blue"></div>
+      <div class="aurora aurora-gold"></div>
+
+      <div class="light-beam light-beam-left"></div>
+      <div class="light-beam light-beam-right"></div>
+
+      <div class="ambient-orb ambient-orb-one"></div>
+      <div class="ambient-orb ambient-orb-two"></div>
+      <div class="ambient-orb ambient-orb-three"></div>
+      <div class="ambient-orb ambient-orb-four"></div>
+
+      <div
+        id="particleLayer"
+        class="particle-layer"
+      ></div>
+
+      <div
+        id="musicParticleLayer"
+        class="music-particle-layer"
+      ></div>
+
+      <div
+        id="celebrationLayer"
+        class="celebration-layer"
+      ></div>
+    </div>
+
+    <div
+      id="screenFlash"
+      class="screen-flash"
+      aria-hidden="true"
+    ></div>
+
+    <div
+      id="transitionCurtain"
+      class="transition-curtain hidden"
+      aria-hidden="true"
+    >
+      <div class="transition-panel transition-panel-left"></div>
+      <div class="transition-panel transition-panel-right"></div>
+
+      <div class="transition-light transition-light-one"></div>
+      <div class="transition-light transition-light-two"></div>
+
+      <div class="transition-emblem">
+        <span class="transition-emblem-icon">
+          ♪
+        </span>
+      </div>
+    </div>
+
+    <div
+      id="connectionBanner"
+      class="connection-banner hidden"
+      role="status"
+    >
+      <span class="connection-banner-pulse"></span>
+
+      <span
+        id="connectionBannerText"
+        class="connection-banner-text"
+      >
+        Łączenie z serwerem…
+      </span>
+    </div>
+
+    <header class="show-header">
+      <div class="show-brand">
+        <div
+          class="polish-emblem"
+          aria-hidden="true"
+        >
+          <div class="polish-emblem-glow"></div>
+
+          <div class="polish-emblem-flag">
+            <span class="flag-white"></span>
+            <span class="flag-red"></span>
+          </div>
+
+          <span class="polish-emblem-label">
+            PL
+          </span>
+        </div>
+
+        <div class="brand-copy">
+          <span class="brand-eyebrow">
+            INTERAKTYWNY QUIZ MUZYCZNY
+          </span>
+
+          <strong class="brand-title">
+            POLSKA NOSTALGIA
+          </strong>
+
+          <span class="brand-subtitle">
+            NAJWIĘKSZE POLSKIE HITY
+          </span>
+        </div>
+      </div>
+
+      <div class="header-statuses">
+        <div
+          id="spotifyIndicator"
+          class="header-status spotify-status waiting"
+        >
+          <span class="header-status-icon">
+            ♪
+          </span>
+
+          <span class="header-status-copy">
+            <small>
+              MUZYKA
+            </small>
+
+            <strong id="spotifyIndicatorText">
+              ŁĄCZENIE
+            </strong>
+          </span>
+        </div>
+
+        <div
+          id="playerIndicator"
+          class="header-status player-status waiting"
+        >
+          <span class="header-status-dot"></span>
+
+          <span class="header-status-copy">
+            <small>
+              PLAYER
+            </small>
+
+            <strong id="playerIndicatorText">
+              OCZEKUJE
+            </strong>
+          </span>
+        </div>
+
+        <div class="live-badge">
+          <span class="live-badge-dot"></span>
+
+          <strong>
+            LIVE
+          </strong>
+        </div>
+      </div>
+    </header>
+
+    <section
+      id="idleScreen"
+      class="game-screen idle-screen active"
+      aria-label="Ekran oczekiwania"
+    >
+      <div class="idle-stage">
+        <div class="idle-halo">
+          <div class="idle-halo-ring idle-halo-ring-one"></div>
+          <div class="idle-halo-ring idle-halo-ring-two"></div>
+          <div class="idle-halo-ring idle-halo-ring-three"></div>
+
+          <div class="idle-logo">
+            <span class="idle-logo-note">
+              ♪
+            </span>
+
+            <span class="idle-logo-spark idle-logo-spark-one">
+              ✦
+            </span>
+
+            <span class="idle-logo-spark idle-logo-spark-two">
+              ✦
+            </span>
+
+            <span class="idle-logo-spark idle-logo-spark-three">
+              ✦
+            </span>
+          </div>
+        </div>
+
+        <div class="idle-copy">
+          <span class="screen-eyebrow">
+            POLSKA NOSTALGIA LIVE
+          </span>
+
+          <h1>
+            MUZYCZNE EMOCJE
+            <span>
+              JUŻ ZA CHWILĘ
+            </span>
+          </h1>
+
+          <p>
+            Przygotuj swoją muzyczną pamięć.
+            Rozpoznawaj wykonawców i tytuły,
+            zdobywaj punkty i walcz o miejsce w TOP 3.
+          </p>
+        </div>
+
+        <div class="idle-feature-row">
+          <div class="idle-feature">
+            <span class="idle-feature-icon">
+              🎵
+            </span>
+
+            <span>
+              POLSKIE HITY
+            </span>
+          </div>
+
+          <div class="idle-feature">
+            <span class="idle-feature-icon">
+              ⚡
+            </span>
+
+            <span>
+              SZYBKIE RUNDY
+            </span>
+          </div>
+
+          <div class="idle-feature">
+            <span class="idle-feature-icon">
+              🏆
+            </span>
+
+            <span>
+              RANKING LIVE
+            </span>
+          </div>
+        </div>
+
+        <div class="waiting-callout">
+          <span class="waiting-callout-dot"></span>
+
+          <strong id="idleStatusText">
+            AUTOMAT OCZEKUJE NA START
+          </strong>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="preparingScreen"
+      class="game-screen preparing-screen hidden"
+      aria-label="Przygotowanie rundy"
+    >
+      <div class="preparing-stage">
+        <div class="preparing-visual">
+          <div class="preparing-disc">
+            <div class="preparing-disc-edge"></div>
+            <div class="preparing-disc-grooves"></div>
+
+            <div class="preparing-disc-label">
+              <span>
+                PN
+              </span>
+            </div>
+
+            <div class="preparing-disc-hole"></div>
+          </div>
+
+          <div class="preparing-equalizer">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="preparing-copy">
+          <span
+            id="preparingEyebrow"
+            class="screen-eyebrow"
+          >
+            NOWA RUNDA
+          </span>
+
+          <h2 id="preparingTitle">
+            WYBIERAMY KOLEJNY HIT
+          </h2>
+
+          <p id="preparingDescription">
+            Automat przygotowuje pytanie i sprawdza,
+            czy utwór jest gotowy do odtworzenia.
+          </p>
+        </div>
+
+        <div class="preparing-progress">
+          <div class="preparing-progress-track">
+            <div
+              id="preparingProgressValue"
+              class="preparing-progress-value"
+            ></div>
+          </div>
+
+          <span id="preparingProgressText">
+            ANALIZA BIBLIOTEKI MUZYCZNEJ
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="syncingScreen"
+      class="game-screen syncing-screen hidden"
+      aria-label="Synchronizacja muzyki"
+    >
+      <div class="syncing-stage">
+        <div class="syncing-orbit">
+          <div class="syncing-ring syncing-ring-one"></div>
+          <div class="syncing-ring syncing-ring-two"></div>
+          <div class="syncing-ring syncing-ring-three"></div>
+
+          <div class="syncing-core">
+            <span class="syncing-core-icon">
+              ♪
+            </span>
+          </div>
+
+          <span class="sync-node sync-node-one"></span>
+          <span class="sync-node sync-node-two"></span>
+          <span class="sync-node sync-node-three"></span>
+        </div>
+
+        <div class="syncing-copy">
+          <span class="screen-eyebrow">
+            INTELIGENTNY START
+          </span>
+
+          <h2 id="syncingTitle">
+            SYNCHRONIZUJEMY UTWÓR
+          </h2>
+
+          <p id="syncingDescription">
+            Automat sprawdza muzykę, aktywne urządzenie
+            i rzeczywisty postęp odtwarzania.
+          </p>
+        </div>
+
+        <div class="syncing-checks">
+          <div
+            id="syncTrackCheck"
+            class="sync-check waiting"
+          >
+            <span class="sync-check-icon">
+              ✓
+            </span>
+
+            <span>
+              WŁAŚCIWY UTWÓR
+            </span>
+          </div>
+
+          <div
+            id="syncDeviceCheck"
+            class="sync-check waiting"
+          >
+            <span class="sync-check-icon">
+              ✓
+            </span>
+
+            <span>
+              PLAYER GOTOWY
+            </span>
+          </div>
+
+          <div
+            id="syncProgressCheck"
+            class="sync-check waiting"
+          >
+            <span class="sync-check-icon">
+              ✓
+            </span>
+
+            <span>
+              MUZYKA DZIAŁA
+            </span>
+          </div>
+        </div>
+
+        <div class="syncing-status">
+          <span class="syncing-status-dot"></span>
+
+          <strong id="syncingStatusText">
+            BEZPIECZNE URUCHAMIANIE
+          </strong>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="questionScreen"
+      class="game-screen question-screen hidden"
+      aria-label="Pytanie quizowe"
+    >
+      <div class="round-meta-row">
+        <div class="round-identity">
+          <span
+            id="roundLabel"
+            class="round-label"
+          >
+            RUNDA 1
+          </span>
+
+          <span class="round-meta-divider"></span>
+
+          <span
+            id="stageLabel"
+            class="stage-label"
+          >
+            ZGADNIJ WYKONAWCĘ
+          </span>
+        </div>
+
+        <div
+          id="questionLiveStatus"
+          class="question-live-status"
+        >
+          <span class="question-live-dot"></span>
+
+          <strong>
+            GŁOSOWANIE TRWA
+          </strong>
+        </div>
+      </div>
+
+      <div class="main-game-layout">
+        <section class="track-visual-card">
+          <div class="track-card-light"></div>
+
+          <div
+            id="trackArtworkFrame"
+            class="track-artwork-frame concealed"
+          >
+            <div class="artwork-glow"></div>
+
+            <img
+              id="trackCover"
+              class="track-cover"
+              alt=""
+              draggable="false"
+            >
+
+            <div class="track-cover-overlay"></div>
+
+            <div
+              id="trackCoverShield"
+              class="track-cover-shield"
+            >
+              <div class="track-cover-question">
+                <span>
+                  ?
+                </span>
+              </div>
+            </div>
+
+            <div class="artwork-scanline"></div>
+          </div>
+
+          <div class="track-pulse-ring track-pulse-ring-one"></div>
+          <div class="track-pulse-ring track-pulse-ring-two"></div>
+
+          <div
+            id="trackPlaybackBadge"
+            class="track-playback-badge"
+          >
+            <span class="track-playback-icon">
+              ♪
+            </span>
+
+            <span id="trackPlaybackText">
+              MUZYKA GRA
+            </span>
+          </div>
+
+          <div class="track-equalizer">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </section>
+
+        <section class="question-content">
+          <div class="question-heading">
+            <span
+              id="questionCategory"
+              class="question-category"
+            >
+              POLSKI HIT
+            </span>
+
+            <h1 id="questionText">
+              Kto wykonuje ten utwór?
+            </h1>
+
+            <p id="questionInstruction">
+              Napisz na czacie A, B, C lub D
+            </p>
+          </div>
+
+          <div
+            id="answerGrid"
+            class="answer-grid"
+          >
+            <article
+              id="answerA"
+              class="answer-card answer-a"
+              data-letter="A"
+            >
+              <div class="answer-letter">
+                A
+              </div>
+
+              <div class="answer-copy">
+                <span
+                  id="answerAText"
+                  class="answer-text"
+                >
+                  Odpowiedź A
+                </span>
+              </div>
+
+              <div class="answer-vote">
+                <div class="answer-vote-track">
+                  <div
+                    id="answerAProgress"
+                    class="answer-vote-value"
+                  ></div>
+                </div>
+
+                <strong id="answerACount">
+                  0
+                </strong>
+              </div>
+            </article>
+
+            <article
+              id="answerB"
+              class="answer-card answer-b"
+              data-letter="B"
+            >
+              <div class="answer-letter">
+                B
+              </div>
+
+              <div class="answer-copy">
+                <span
+                  id="answerBText"
+                  class="answer-text"
+                >
+                  Odpowiedź B
+                </span>
+              </div>
+
+              <div class="answer-vote">
+                <div class="answer-vote-track">
+                  <div
+                    id="answerBProgress"
+                    class="answer-vote-value"
+                  ></div>
+                </div>
+
+                <strong id="answerBCount">
+                  0
+                </strong>
+              </div>
+            </article>
+
+            <article
+              id="answerC"
+              class="answer-card answer-c"
+              data-letter="C"
+            >
+              <div class="answer-letter">
+                C
+              </div>
+
+              <div class="answer-copy">
+                <span
+                  id="answerCText"
+                  class="answer-text"
+                >
+                  Odpowiedź C
+                </span>
+              </div>
+
+              <div class="answer-vote">
+                <div class="answer-vote-track">
+                  <div
+                    id="answerCProgress"
+                    class="answer-vote-value"
+                  ></div>
+                </div>
+
+                <strong id="answerCCount">
+                  0
+                </strong>
+              </div>
+            </article>
+
+            <article
+              id="answerD"
+              class="answer-card answer-d"
+              data-letter="D"
+            >
+              <div class="answer-letter">
+                D
+              </div>
+
+              <div class="answer-copy">
+                <span
+                  id="answerDText"
+                  class="answer-text"
+                >
+                  Odpowiedź D
+                </span>
+              </div>
+
+              <div class="answer-vote">
+                <div class="answer-vote-track">
+                  <div
+                    id="answerDProgress"
+                    class="answer-vote-value"
+                  ></div>
+                </div>
+
+                <strong id="answerDCount">
+                  0
+                </strong>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <section class="question-control-bar">
+        <div class="time-module">
+          <div class="time-ring">
+            <svg
+              class="time-ring-svg"
+              viewBox="0 0 120 120"
+              aria-hidden="true"
+            >
+              <circle
+                class="time-ring-background"
+                cx="60"
+                cy="60"
+                r="51"
+              ></circle>
+
+              <circle
+                id="timeRingValue"
+                class="time-ring-value"
+                cx="60"
+                cy="60"
+                r="51"
+              ></circle>
+            </svg>
+
+            <div class="time-ring-copy">
+              <strong id="remainingTime">
+                45
+              </strong>
+
+              <span>
+                SEK
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-progress-module">
+          <div class="stage-progress-heading">
+            <span>
+              POPRAWNE ODPOWIEDZI
+            </span>
+
+            <strong id="correctCounter">
+              0 / 10
+            </strong>
+          </div>
+
+          <div class="stage-progress-track">
+            <div
+              id="stageProgressValue"
+              class="stage-progress-value"
+            ></div>
+
+            <div class="stage-progress-shine"></div>
+          </div>
+
+          <div class="stage-progress-footer">
+            <span id="totalVotesText">
+              0 GŁOSÓW
+            </span>
+
+            <span id="uniquePlayersText">
+              0 GRACZY
+            </span>
+          </div>
+        </div>
+
+        <div class="chat-instruction-module">
+          <span class="chat-instruction-icon">
+            💬
+          </span>
+
+          <div>
+            <small>
+              ODPOWIEDZ NA CZACIE
+            </small>
+
+            <strong>
+              A • B • C • D
+            </strong>
+          </div>
+        </div>
+      </section>
+
+      <aside
+        id="hintPanel"
+        class="hint-panel hidden"
+      >
+        <div class="hint-icon">
+          💡
+        </div>
+
+        <div class="hint-copy">
+          <span id="hintLevel">
+            PODPOWIEDŹ
+          </span>
+
+          <strong id="hintText">
+            Przyjrzyj się odpowiedziom.
+          </strong>
+        </div>
+
+        <div class="hint-pulse"></div>
+      </aside>
+
+      <section class="social-proof-row">
+        <div class="recent-votes-panel">
+          <div class="small-panel-heading">
+            <div>
+              <span class="small-panel-icon">
+                ⚡
+              </span>
+
+              <strong>
+                OSTATNIE GŁOSY
+              </strong>
+            </div>
+
+            <span id="recentVotesStatus">
+              LIVE
+            </span>
+          </div>
+
+          <div
+            id="recentVotes"
+            class="recent-votes-list"
+          >
+            <div class="empty-mini-state">
+              Pierwsze odpowiedzi pojawią się tutaj
+            </div>
+          </div>
+        </div>
+
+        <div class="mini-leaderboard-panel">
+          <div class="small-panel-heading">
+            <div>
+              <span class="small-panel-icon">
+                🏆
+              </span>
+
+              <strong>
+                TOP 3 LIVE
+              </strong>
+            </div>
+
+            <span>
+              RANKING
+            </span>
+          </div>
+
+          <div
+            id="miniLeaderboard"
+            class="mini-leaderboard"
+          >
+            <div class="mini-leaderboard-row first">
+              <span class="leaderboard-position">
+                1
+              </span>
+
+              <strong id="leaderboardFirstName">
+                Czekamy…
+              </strong>
+
+              <span id="leaderboardFirstPoints">
+                0 pkt
+              </span>
+            </div>
+
+            <div class="mini-leaderboard-row second">
+              <span class="leaderboard-position">
+                2
+              </span>
+
+              <strong id="leaderboardSecondName">
+                Czekamy…
+              </strong>
+
+              <span id="leaderboardSecondPoints">
+                0 pkt
+              </span>
+            </div>
+
+            <div class="mini-leaderboard-row third">
+              <span class="leaderboard-position">
+                3
+              </span>
+
+              <strong id="leaderboardThirdName">
+                Czekamy…
+              </strong>
+
+              <span id="leaderboardThirdPoints">
+                0 pkt
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section
+      id="revealScreen"
+      class="game-screen reveal-screen hidden"
+      aria-label="Ujawnienie odpowiedzi"
+    >
+      <div
+        id="revealCelebration"
+        class="reveal-celebration"
+        aria-hidden="true"
+      ></div>
+
+      <div class="reveal-stage">
+        <div class="reveal-heading">
+          <span
+            id="revealEyebrow"
+            class="screen-eyebrow"
+          >
+            POPRAWNA ODPOWIEDŹ
+          </span>
+
+          <h2 id="revealTitle">
+            TO BYŁA DOBRA RUNDA!
+          </h2>
+        </div>
+
+        <div class="reveal-answer-layout">
+          <div class="reveal-cover-wrap">
+            <div class="reveal-cover-glow"></div>
+
+            <img
+              id="revealCover"
+              class="reveal-cover"
+              alt=""
+              draggable="false"
+            >
+
+            <div class="reveal-cover-shine"></div>
+
+            <div class="reveal-success-badge">
+              ✓
+            </div>
+          </div>
+
+          <div class="reveal-answer-card">
+            <span
+              id="revealAnswerLetter"
+              class="reveal-answer-letter"
+            >
+              A
+            </span>
+
+            <div class="reveal-answer-copy">
+              <span>
+                POPRAWNA ODPOWIEDŹ
+              </span>
+
+              <strong id="revealAnswer">
+                Wykonawca lub tytuł
+              </strong>
+            </div>
+          </div>
+
+          <div class="revealed-track-data">
+            <strong id="revealedTrackArtist">
+              Wykonawca
+            </strong>
+
+            <span class="revealed-track-divider">
+              •
+            </span>
+
+            <strong id="revealedTrackTitle">
+              Tytuł
+            </strong>
+
+            <span class="revealed-track-divider">
+              •
+            </span>
+
+            <span id="revealedTrackYear">
+              Rok
+            </span>
+          </div>
+        </div>
+
+        <div class="reveal-results">
+          <div class="reveal-result-card">
+            <span class="reveal-result-icon">
+              ✅
+            </span>
+
+            <div>
+              <small>
+                POPRAWNE ODPOWIEDZI
+              </small>
+
+              <strong id="revealCorrectCount">
+                0
+              </strong>
+            </div>
+          </div>
+
+          <div class="reveal-result-card">
+            <span class="reveal-result-icon">
+              👥
+            </span>
+
+            <div>
+              <small>
+                UCZESTNICY
+              </small>
+
+              <strong id="revealPlayerCount">
+                0
+              </strong>
+            </div>
+          </div>
+
+          <div class="reveal-result-card highlight">
+            <span class="reveal-result-icon">
+              ⚡
+            </span>
+
+            <div>
+              <small>
+                NAJSZYBSZA ODPOWIEDŹ
+              </small>
+
+              <strong id="revealFastestPlayer">
+                Brak
+              </strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-countdown">
+          <span id="revealCountdownLabel">
+            KOLEJNY ETAP ZA
+          </span>
+
+          <strong id="revealCountdown">
+            4
+          </strong>
+
+          <span>
+            SEKUNDY
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="recoveryScreen"
+      class="game-screen recovery-screen hidden"
+      aria-label="Automatyczne odzyskiwanie"
+    >
+      <div class="recovery-stage">
+        <div class="recovery-visual">
+          <div class="recovery-heartbeat">
+            <span class="recovery-heartbeat-line"></span>
+            <span class="recovery-heartbeat-line"></span>
+            <span class="recovery-heartbeat-line"></span>
+          </div>
+
+          <div class="recovery-icon-wrap">
+            <div class="recovery-icon-ring recovery-icon-ring-one"></div>
+            <div class="recovery-icon-ring recovery-icon-ring-two"></div>
+
+            <span id="recoveryIcon">
+              ♪
+            </span>
+          </div>
+        </div>
+
+        <div class="recovery-copy">
+          <span
+            id="recoveryEyebrow"
+            class="screen-eyebrow"
+          >
+            POLSKA NOSTALGIA LIVE
+          </span>
+
+          <h2 id="recoveryTitle">
+            PRZYGOTOWUJEMY KOLEJNY HIT
+          </h2>
+
+          <p id="recoveryDescription">
+            Automat sprawdza odtwarzacz i przygotowuje
+            bezpieczny powrót do quizu.
+          </p>
+        </div>
+
+        <div class="recovery-actions">
+          <div
+            id="recoveryPlayerStep"
+            class="recovery-step active"
+          >
+            <span class="recovery-step-number">
+              1
+            </span>
+
+            <span class="recovery-step-label">
+              PLAYER
+            </span>
+
+            <strong id="recoveryPlayerStepText">
+              SPRAWDZANIE
+            </strong>
+          </div>
+
+          <div
+            id="recoveryMusicStep"
+            class="recovery-step"
+          >
+            <span class="recovery-step-number">
+              2
+            </span>
+
+            <span class="recovery-step-label">
+              MUZYKA
+            </span>
+
+            <strong id="recoveryMusicStepText">
+              OCZEKUJE
+            </strong>
+          </div>
+
+          <div
+            id="recoveryReturnStep"
+            class="recovery-step"
+          >
+            <span class="recovery-step-number">
+              3
+            </span>
+
+            <span class="recovery-step-label">
+              POWRÓT
+            </span>
+
+            <strong id="recoveryReturnStepText">
+              ZA CHWILĘ
+            </strong>
+          </div>
+        </div>
+
+        <div class="recovery-progress">
+          <div class="recovery-progress-track">
+            <div
+              id="recoveryProgressValue"
+              class="recovery-progress-value"
+            ></div>
+          </div>
+
+          <div class="recovery-progress-copy">
+            <span id="recoveryStatusText">
+              AUTOMATYCZNA OCHRONA TRANSMISJI
+            </span>
+
+            <strong id="recoveryCountdown">
+              7
+            </strong>
+          </div>
+        </div>
+
+        <div
+          id="recoveryPromo"
+          class="recovery-promo"
+        >
+          <span
+            id="recoveryPromoIcon"
+            class="recovery-promo-icon"
+          >
+            ❤️
+          </span>
+
+          <div class="recovery-promo-copy">
+            <small id="recoveryPromoEyebrow">
+              PODOBA CI SIĘ QUIZ?
+            </small>
+
+            <strong id="recoveryPromoTitle">
+              ZOSTAW OBSERWACJĘ
+            </strong>
+
+            <span id="recoveryPromoDescription">
+              Dzięki temu nie przegapisz kolejnego muzycznego LIVE.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="returningScreen"
+      class="game-screen returning-screen hidden"
+      aria-label="Powrót do quizu"
+    >
+      <div class="returning-stage">
+        <div class="returning-burst">
+          <span class="returning-ray returning-ray-one"></span>
+          <span class="returning-ray returning-ray-two"></span>
+          <span class="returning-ray returning-ray-three"></span>
+          <span class="returning-ray returning-ray-four"></span>
+          <span class="returning-ray returning-ray-five"></span>
+          <span class="returning-ray returning-ray-six"></span>
+
+          <div class="returning-countdown-ring">
+            <strong id="returningCountdown">
+              3
+            </strong>
+          </div>
+        </div>
+
+        <span class="screen-eyebrow">
+          WSZYSTKO GOTOWE
+        </span>
+
+        <h2>
+          WRACAMY DO GRY!
+        </h2>
+
+        <p>
+          Przygotuj odpowiedź. Kolejny polski hit
+          wystartuje automatycznie.
+        </p>
+      </div>
+    </section>
+
+    <section
+      id="pausedScreen"
+      class="game-screen paused-screen hidden"
+      aria-label="Quiz wstrzymany"
+    >
+      <div class="paused-stage">
+        <div class="paused-icon">
+          <span></span>
+          <span></span>
+        </div>
+
+        <span class="screen-eyebrow">
+          CHWILA PRZERWY
+        </span>
+
+        <h2>
+          QUIZ WSTRZYMANY
+        </h2>
+
+        <p>
+          Zostań z nami. Rozgrywka wróci już za moment.
+        </p>
+
+        <div class="paused-equalizer">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="playerOfflineScreen"
+      class="game-screen player-offline-screen hidden"
+      aria-label="Odtwarzacz chwilowo niedostępny"
+    >
+      <div class="player-offline-stage">
+        <div class="player-offline-icon">
+          <span class="player-offline-note">
+            ♪
+          </span>
+
+          <span class="player-offline-signal">
+            <i></i>
+            <i></i>
+            <i></i>
+          </span>
+        </div>
+
+        <span class="screen-eyebrow">
+          AUTOMATYCZNE ODZYSKIWANIE
+        </span>
+
+        <h2>
+          PLAYER WRÓCI ZA CHWILĘ
+        </h2>
+
+        <p>
+          System sam odnawia połączenie.
+          Nie musisz niczego robić.
+        </p>
+
+        <div class="player-offline-status">
+          <span class="player-offline-status-dot"></span>
+
+          <strong id="playerOfflineStatus">
+            PONOWNE ŁĄCZENIE
+          </strong>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="showMoment"
+      class="show-moment hidden"
+      aria-label="Specjalny moment transmisji"
+    >
+      <div
+        id="showMomentBackdrop"
+        class="show-moment-backdrop"
+      ></div>
+
+      <div
+        id="showMomentParticles"
+        class="show-moment-particles"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        id="showMomentFloatingIcons"
+        class="show-moment-floating-icons"
+        aria-hidden="true"
+      ></div>
+
+      <div class="show-moment-stage">
+        <div
+          id="showMomentAura"
+          class="show-moment-aura"
+        ></div>
+
+        <div class="show-moment-icon-stage">
+          <div class="show-moment-icon-ring show-moment-icon-ring-one"></div>
+          <div class="show-moment-icon-ring show-moment-icon-ring-two"></div>
+          <div class="show-moment-icon-ring show-moment-icon-ring-three"></div>
+
+          <div
+            id="showMomentIcon"
+            class="show-moment-icon"
+          >
+            ✨
+          </div>
+
+          <div
+            id="showMomentCombo"
+            class="show-moment-combo hidden"
+          >
+            <span>
+              COMBO
+            </span>
+
+            <strong id="showMomentComboValue">
+              ×1
+            </strong>
+          </div>
+        </div>
+
+        <div class="show-moment-copy">
+          <span
+            id="showMomentCategory"
+            class="show-moment-category"
+          >
+            SPECJALNY MOMENT
+          </span>
+
+          <span
+            id="showMomentEyebrow"
+            class="show-moment-eyebrow"
+          >
+            POLSKA NOSTALGIA LIVE
+          </span>
+
+          <h2 id="showMomentTitle">
+            ZOSTAŃ Z NAMI!
+          </h2>
+
+          <p id="showMomentDescription">
+            Przed nami kolejne muzyczne emocje.
+          </p>
+        </div>
+
+        <div
+          id="showMomentRecord"
+          class="show-moment-record hidden"
+        >
+          <span id="showMomentRecordLabel">
+            WBIJAMY REKORD
+          </span>
+
+          <strong id="showMomentRecordValue">
+            0
+          </strong>
+
+          <small id="showMomentRecordUnit">
+            GRACZY
+          </small>
+        </div>
+
+        <div
+          id="showMomentCounter"
+          class="show-moment-counter hidden"
+        >
+          <span id="showMomentCounterLabel">
+            RAZEM
+          </span>
+
+          <strong id="showMomentCounterValue">
+            0
+          </strong>
+        </div>
+
+        <div class="show-moment-actions">
+          <div class="show-moment-primary-action">
+            <span
+              id="showMomentActionIcon"
+              class="show-moment-action-icon"
+            >
+              ↗
+            </span>
+
+            <strong id="showMomentActionText">
+              UDOSTĘPNIJ LIVE
+            </strong>
+          </div>
+
+          <div class="show-moment-secondary-action">
+            <span id="showMomentSecondaryIcon">
+              ❤️
+            </span>
+
+            <strong id="showMomentSecondaryText">
+              DZIĘKUJEMY ZA WSPARCIE
+            </strong>
+          </div>
+        </div>
+
+        <div class="show-moment-progress">
+          <div
+            id="showMomentProgressValue"
+            class="show-moment-progress-value"
+          ></div>
+        </div>
+
+        <div
+          id="showMomentBottomText"
+          class="show-moment-bottom-text"
+        >
+          ZA CHWILĘ WRACAMY DO GRY
+        </div>
+      </div>
+    </section>
+
+    <footer class="show-footer">
+      <div
+        id="footerTicker"
+        class="footer-ticker"
+      >
+        <div class="footer-ticker-icon">
+          ♪
+        </div>
+
+        <div class="footer-ticker-window">
+          <div
+            id="footerTickerTrack"
+            class="footer-ticker-track"
+          >
+            <span>
+              NAPISZ A, B, C LUB D NA CZACIE
+            </span>
+
+            <span class="ticker-separator">
+              ✦
+            </span>
+
+            <span>
+              ZDOBYWAJ PUNKTY
+            </span>
+
+            <span class="ticker-separator">
+              ✦
+            </span>
+
+            <span>
+              WALCZ O TOP 3
+            </span>
+
+            <span class="ticker-separator">
+              ✦
+            </span>
+
+            <span>
+              POLSKA NOSTALGIA LIVE
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-system-status">
+        <span
+          id="footerSystemDot"
+          class="footer-system-dot waiting"
+        ></span>
+
+        <span id="footerSystemText">
+          SYSTEM GOTOWY
+        </span>
+      </div>
+    </footer>
+
+    <div
+      id="toastLayer"
+      class="overlay-toast-layer"
+      aria-live="assertive"
+    ></div>
+
+    <div
+      id="debugPanel"
+      class="debug-panel hidden"
+      aria-hidden="true"
+    >
+      <strong>
+        OVERLAY DEBUG
+      </strong>
+
+      <div>
+        <span>
+          SSE:
+        </span>
+
+        <b id="debugConnection">
+          WAITING
+        </b>
+      </div>
+
+      <div>
+        <span>
+          PHASE:
+        </span>
+
+        <b id="debugPhase">
+          IDLE
+        </b>
+      </div>
+
+      <div>
+        <span>
+          PLAYER:
+        </span>
+
+        <b id="debugPlayer">
+          OFFLINE
+        </b>
+      </div>
+
+      <div>
+        <span>
+          TRACK:
+        </span>
+
+        <b id="debugTrack">
+          NONE
+        </b>
+      </div>
+
+      <div>
+        <span>
+          VERSION:
+        </span>
+
+        <b id="debugVersion">
+          8.0
+        </b>
+      </div>
+    </div>
+
+    <noscript>
+      <div class="noscript-warning">
+        Overlay wymaga włączonego JavaScript.
+      </div>
+    </noscript>
+  </main>
+
+  <script
+    src="/overlay.js"
+    defer
+  ></script>
+</body>
+</html>

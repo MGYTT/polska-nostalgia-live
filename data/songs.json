@@ -1,0 +1,82 @@
+[
+  {
+    "id": "song_001",
+    "artist": "Jeden Osiem L",
+    "title": "Jak zapomnieć",
+    "year": 2003,
+    "spotifyUri": "",
+    "audio": "/media/audio/song_001.mp3",
+    "cover": "/media/covers/song_001.jpg",
+    "enabled": true
+  },
+  {
+    "id": "song_002",
+    "artist": "Kombii",
+    "title": "Pokolenie",
+    "year": 2004,
+    "spotifyUri": "",
+    "audio": "/media/audio/song_002.mp3",
+    "cover": "/media/covers/song_002.jpg",
+    "enabled": true
+  },
+  {
+    "id": "song_003",
+    "artist": "Myslovitz",
+    "title": "Długość dźwięku samotności",
+    "year": 1999,
+    "spotifyUri": "",
+    "audio": "/media/audio/song_003.mp3",
+    "cover": "/media/covers/song_003.jpg",
+    "enabled": true
+  },
+  {
+    "id": "song_004",
+    "artist": "Ich Troje",
+    "title": "Powiedz",
+    "year": 2001,
+    "spotifyUri": "",
+    "audio": "/media/audio/song_004.mp3",
+    "cover": "/media/covers/song_004.jpg",
+    "enabled": true
+  },
+  {
+    "id": "song_005",
+    "artist": "Virgin",
+    "title": "Szansa",
+    "year": 2006,
+    "spotifyUri": "",
+    "audio": "/media/audio/song_005.mp3",
+    "cover": "/media/covers/song_005.jpg",
+    "enabled": true
+  },
+  {
+    "id": "song_006",
+    "artist": "Wilki",
+    "title": "Baśka",
+    "year": 2002,
+    "spotifyUri": "",
+    "audio": "/media/audio/song_006.mp3",
+    "cover": "/media/covers/song_006.jpg",
+    "enabled": true
+  },
+  {
+    "id": "song_007",
+    "artist": "Kasia Cerekwicka",
+    "title": "Na kolana",
+    "year": 2006,
+    "spotifyUri": "",
+    "audio": "/media/audio/song_007.mp3",
+    "cover": "/media/covers/song_007.jpg",
+    "enabled": true
+  },
+  {
+    "id": "song_008",
+    "artist": "Blue Café",
+    "title": "Czas nie będzie czekał",
+    "year": 2008,
+    "spotifyUri": "",
+    "audio": "/media/audio/song_008.mp3",
+    "cover": "/media/covers/song_008.jpg",
+    "enabled": true
+  }
+]

@@ -1,0 +1,1352 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="theme-color"
+    content="#080711"
+  >
+
+  <meta
+    name="color-scheme"
+    content="dark"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow, noarchive"
+  >
+
+  <title>
+    Polska Nostalgia LIVE - Control Center v8.0
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="/styles.css"
+  >
+</head>
+
+<body>
+  <main class="app">
+
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">
+          LIVE CONTROL CENTER v8.0
+        </span>
+
+        <h1>
+          🇵🇱 Polska Nostalgia LIVE
+        </h1>
+
+        <p>
+          Profesjonalne centrum sterowania quizem muzycznym,
+          Spotify, LIVE FX i interakcjami widzów.
+        </p>
+      </div>
+
+      <div class="header-statuses">
+
+        <div
+          id="spotifyStatus"
+          class="status offline"
+        >
+          Spotify offline
+        </div>
+
+        <div
+          id="streamToEarnStatus"
+          class="status waiting"
+        >
+          StreamToEarn oczekuje
+        </div>
+
+        <div
+          id="quizStatus"
+          class="status waiting"
+        >
+          Quiz zatrzymany
+        </div>
+
+        <div
+          id="liveFxStatus"
+          class="status waiting"
+        >
+          LIVE FX gotowy
+        </div>
+
+      </div>
+    </header>
+
+    <section
+      id="errorBox"
+      class="error-box hidden"
+      role="alert"
+      aria-live="assertive"
+    ></section>
+
+    <section class="dashboard-grid">
+
+      <article class="card spotify-card">
+
+        <div class="card-heading">
+          <div>
+            <span class="card-label">
+              SPOTIFY + PLAYER
+            </span>
+
+            <h2>
+              Konto i odtwarzacz
+            </h2>
+          </div>
+
+          <span
+            id="spotifyMiniStatus"
+            class="mini-status offline"
+          >
+            OFFLINE
+          </span>
+        </div>
+
+        <div id="spotifyDisconnected">
+
+          <p class="muted">
+            Połącz konto Spotify, aby pobrać playlisty,
+            metadane utworów i przygotować automatyczne
+            odtwarzanie quizu.
+          </p>
+
+          <a
+            class="button spotify-button"
+            href="/auth/spotify"
+          >
+            Połącz Spotify
+          </a>
+
+        </div>
+
+        <div
+          id="spotifyConnected"
+          class="hidden"
+        >
+
+          <div class="profile">
+
+            <div
+              id="profileAvatar"
+              class="avatar"
+            >
+              S
+            </div>
+
+            <div class="profile-data">
+              <strong id="profileName">
+                Spotify
+              </strong>
+
+              <span id="profileProduct">
+                Połączono
+              </span>
+            </div>
+
+          </div>
+
+          <div
+            id="playbackInformation"
+            class="information-box"
+          >
+            <span class="information-label">
+              POLSKA NOSTALGIA PLAYER
+            </span>
+
+            <strong id="deviceName">
+              Sprawdzanie...
+            </strong>
+
+            <span id="deviceDetails">
+              Oczekiwanie na rejestrację Playera
+            </span>
+          </div>
+
+          <button
+            id="refreshPlaybackButton"
+            class="button secondary-button"
+            type="button"
+          >
+            Odśwież urządzenie
+          </button>
+
+          <a
+            class="button secondary-button"
+            href="/player"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Otwórz Player
+          </a>
+
+          <button
+            id="disconnectButton"
+            class="button danger-button"
+            type="button"
+          >
+            Rozłącz Spotify
+          </button>
+
+        </div>
+      </article>
+
+      <article class="card stream-card">
+
+        <div class="card-heading">
+          <div>
+            <span class="card-label">
+              STREAMTOEARN
+            </span>
+
+            <h2>
+              Komentarze LIVE
+            </h2>
+          </div>
+
+          <span
+            id="streamMiniStatus"
+            class="mini-status waiting"
+          >
+            WAITING
+          </span>
+        </div>
+
+        <p class="muted">
+          Odpowiedzi A, B, C i D przesyłane przez widzów
+          trafiają bezpośrednio do aktywnej rundy quizu.
+        </p>
+
+        <div class="statistics-row">
+
+          <div class="statistic">
+            <span>
+              Requesty
+            </span>
+
+            <strong id="streamRequests">
+              0
+            </strong>
+          </div>
+
+          <div class="statistic">
+            <span>
+              Przyjęte
+            </span>
+
+            <strong id="streamAccepted">
+              0
+            </strong>
+          </div>
+
+          <div class="statistic">
+            <span>
+              Odrzucone
+            </span>
+
+            <strong id="streamRejected">
+              0
+            </strong>
+          </div>
+
+        </div>
+
+        <div
+          id="lastStreamEvent"
+          class="information-box"
+        >
+          <span class="information-label">
+            OSTATNIE ZDARZENIE
+          </span>
+
+          <strong>
+            Brak komentarzy
+          </strong>
+
+          <span>
+            StreamToEarn oczekuje na pierwsze żądanie HTTP
+          </span>
+        </div>
+
+        <div class="stream-actions">
+
+          <a
+            class="button secondary-button"
+            href="/api/streamtoearn/status"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Otwórz status
+          </a>
+
+          <button
+            id="resetStreamStatusButton"
+            class="button secondary-button"
+            type="button"
+          >
+            Wyczyść statystyki
+          </button>
+
+        </div>
+
+      </article>
+
+      <article class="card playlist-card">
+
+        <div class="card-heading">
+          <div>
+            <span class="card-label">
+              BIBLIOTEKA QUIZU
+            </span>
+
+            <h2>
+              Playlisty Spotify
+            </h2>
+          </div>
+        </div>
+
+        <p class="muted">
+          Wybierz playlistę, z której automat będzie losował
+          kolejne polskie hity. Każdy utwór tworzy jedną
+          niezależną rundę.
+        </p>
+
+        <div class="playlist-form">
+
+          <select
+            id="playlistSelect"
+            disabled
+          >
+            <option value="">
+              Najpierw połącz Spotify
+            </option>
+          </select>
+
+          <button
+            id="loadPlaylistButton"
+            class="button primary-button"
+            type="button"
+            disabled
+          >
+            Wczytaj playlistę
+          </button>
+
+        </div>
+
+        <div
+          id="playlistInformation"
+          class="playlist-information hidden"
+        >
+
+          <div
+            id="playlistImage"
+            class="playlist-image"
+          ></div>
+
+          <div class="playlist-data">
+            <strong id="playlistName">
+              -
+            </strong>
+
+            <span id="playlistStatistics">
+              -
+            </span>
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="card control-card">
+
+        <div class="card-heading">
+          <div>
+            <span class="card-label">
+              AUTO QUIZ v8.0
+            </span>
+
+            <h2>
+              Sterowanie transmisją
+            </h2>
+          </div>
+
+          <span
+            id="automationBadge"
+            class="automation-badge offline"
+          >
+            ZATRZYMANY
+          </span>
+        </div>
+
+        <div class="information-box">
+          <span class="information-label">
+            MODEL ROZGRYWKI
+          </span>
+
+          <strong>
+            1 UTWÓR = 1 PYTANIE
+          </strong>
+
+          <span>
+            Losowany jest wykonawca albo tytuł.
+            Po pokazaniu odpowiedzi automat przechodzi
+            do zupełnie nowego utworu.
+          </span>
+        </div>
+
+        <button
+          id="startQuizButton"
+          class="button start-button"
+          type="button"
+          disabled
+        >
+          🚀 START AUTO QUIZ
+        </button>
+
+        <div
+          id="runningControls"
+          class="control-grid hidden"
+        >
+
+          <button
+            id="pauseQuizButton"
+            class="button secondary-button"
+            type="button"
+          >
+            ⏸ Pauza
+          </button>
+
+          <button
+            id="resumeQuizButton"
+            class="button success-button hidden"
+            type="button"
+          >
+            ▶ Wznów
+          </button>
+
+          <button
+            id="nextQuizButton"
+            class="button secondary-button"
+            type="button"
+          >
+            ⏭ Pomiń utwór
+          </button>
+
+          <button
+            id="revealQuizButton"
+            class="button warning-button"
+            type="button"
+          >
+            👁 Pokaż odpowiedź
+          </button>
+
+          <button
+            id="stopQuizButton"
+            class="button danger-button"
+            type="button"
+          >
+            ⏹ Zatrzymaj quiz
+          </button>
+
+        </div>
+
+        <p class="control-description">
+          Kolejne utwory, pytania, timeouty, podpowiedzi,
+          synchronizacja Spotify i odzyskiwanie po awarii
+          są prowadzone automatycznie.
+        </p>
+
+      </article>
+
+      <article class="card live-fx-card">
+
+        <div class="card-heading">
+          <div>
+            <span class="card-label">
+              SHOW MOMENTS v8.0
+            </span>
+
+            <h2>
+              🎬 LIVE FX
+            </h2>
+          </div>
+
+          <span
+            id="liveFxMiniStatus"
+            class="mini-status online"
+          >
+            GOTOWY
+          </span>
+        </div>
+
+        <p class="muted">
+          Uruchamiaj pełnoekranowe animacje na overlayu
+          bez zatrzymywania mechaniki quizu.
+        </p>
+
+        <section class="live-fx-section">
+
+          <div class="live-fx-section-heading">
+            <div>
+              <span class="information-label">
+                ZAANGAŻOWANIE
+              </span>
+
+              <strong>
+                Interakcja z widzami
+              </strong>
+            </div>
+          </div>
+
+          <div class="live-fx-grid">
+
+            <button
+              id="showMomentFollowButton"
+              class="button live-fx-button follow"
+              type="button"
+              data-show-moment="follow"
+            >
+              <span>❤️</span>
+
+              <strong>
+                OBSERWUJ
+              </strong>
+
+              <small>
+                Zostaw obserwację
+              </small>
+            </button>
+
+            <button
+              id="showMomentTapButton"
+              class="button live-fx-button tap"
+              type="button"
+              data-show-moment="tap"
+            >
+              <span>💗</span>
+
+              <strong>
+                TAPUJ
+              </strong>
+
+              <small>
+                Tapuj ekran
+              </small>
+            </button>
+
+            <button
+              id="showMomentChatButton"
+              class="button live-fx-button chat"
+              type="button"
+              data-show-moment="chat"
+            >
+              <span>💬</span>
+
+              <strong>
+                CZAT
+              </strong>
+
+              <small>
+                Napisz wiadomość
+              </small>
+            </button>
+
+            <button
+              id="showMomentShareButton"
+              class="button live-fx-button share"
+              type="button"
+              data-show-moment="share"
+            >
+              <span>↗️</span>
+
+              <strong>
+                UDOSTĘPNIJ
+              </strong>
+
+              <small>
+                Podeślij znajomym
+              </small>
+            </button>
+
+            <button
+              id="showMomentInviteButton"
+              class="button live-fx-button invite"
+              type="button"
+              data-show-moment="invite"
+            >
+              <span>👥</span>
+
+              <strong>
+                ZAPROŚ
+              </strong>
+
+              <small>
+                Zaproś do gry
+              </small>
+            </button>
+
+            <button
+              id="showMomentGiftButton"
+              class="button live-fx-button gift"
+              type="button"
+              data-show-moment="gift"
+            >
+              <span>🎁</span>
+
+              <strong>
+                GIFT
+              </strong>
+
+              <small>
+                Wesprzyj LIVE
+              </small>
+            </button>
+
+          </div>
+        </section>
+
+        <section class="live-fx-section">
+
+          <div class="live-fx-section-heading">
+            <div>
+              <span class="information-label">
+                SPECJALNE MOMENTY
+              </span>
+
+              <strong>
+                Reakcje programu
+              </strong>
+            </div>
+          </div>
+
+          <div class="live-fx-grid">
+
+            <button
+              id="showMomentRecordButton"
+              class="button live-fx-button record"
+              type="button"
+              data-show-moment="record"
+            >
+              <span>👑</span>
+
+              <strong>
+                REKORD
+              </strong>
+
+              <small>
+                Wbijamy rekord
+              </small>
+            </button>
+
+            <button
+              id="showMomentThanksButton"
+              class="button live-fx-button thanks"
+              type="button"
+              data-show-moment="thanks"
+            >
+              <span>💜</span>
+
+              <strong>
+                DZIĘKI
+              </strong>
+
+              <small>
+                Podziękuj widzom
+              </small>
+            </button>
+
+            <button
+              id="showMomentNextButton"
+              class="button live-fx-button next"
+              type="button"
+              data-show-moment="next"
+            >
+              <span>🎵</span>
+
+              <strong>
+                NEXT HIT
+              </strong>
+
+              <small>
+                Zapowiedź rundy
+              </small>
+            </button>
+
+          </div>
+        </section>
+
+        <section class="live-fx-settings">
+
+          <div class="live-fx-field">
+            <label for="showMomentDuration">
+              CZAS ANIMACJI
+            </label>
+
+            <select id="showMomentDuration">
+              <option value="">
+                Domyślny presetu
+              </option>
+
+              <option value="5000">
+                5 sekund
+              </option>
+
+              <option value="7000">
+                7 sekund
+              </option>
+
+              <option value="8000">
+                8 sekund
+              </option>
+
+              <option value="10000">
+                10 sekund
+              </option>
+
+              <option value="15000">
+                15 sekund
+              </option>
+            </select>
+          </div>
+
+          <div class="live-fx-field">
+            <label for="showMomentPriority">
+              PRIORYTET
+            </label>
+
+            <select id="showMomentPriority">
+              <option value="">
+                Automatyczny
+              </option>
+
+              <option value="30">
+                Niski
+              </option>
+
+              <option value="50">
+                Normalny
+              </option>
+
+              <option value="80">
+                Wysoki
+              </option>
+
+              <option value="100">
+                Bardzo wysoki
+              </option>
+            </select>
+          </div>
+
+        </section>
+
+        <section class="live-fx-record-config">
+
+          <span class="information-label">
+            KONFIGURACJA REKORDU
+          </span>
+
+          <div class="live-fx-input-grid">
+
+            <input
+              id="showMomentRecordValue"
+              type="number"
+              min="0"
+              step="1"
+              placeholder="Aktualnie, np. 73"
+            >
+
+            <input
+              id="showMomentRecordUnit"
+              type="text"
+              maxlength="30"
+              value="GRACZY"
+              placeholder="Jednostka"
+            >
+
+          </div>
+        </section>
+
+        <div
+          id="liveFxInformation"
+          class="information-box"
+        >
+          <span class="information-label">
+            STAN LIVE FX
+          </span>
+
+          <strong id="liveFxCurrentMoment">
+            Brak aktywnej animacji
+          </strong>
+
+          <span id="liveFxQueueInformation">
+            Kolejka: 0
+          </span>
+        </div>
+
+        <div class="live-fx-control-row">
+
+          <button
+            id="stopShowMomentButton"
+            class="button warning-button"
+            type="button"
+            disabled
+          >
+            ■ Zatrzymaj animację
+          </button>
+
+          <button
+            id="clearShowMomentQueueButton"
+            class="button secondary-button"
+            type="button"
+            disabled
+          >
+            Wyczyść kolejkę
+          </button>
+
+          <button
+            id="stopAllShowMomentsButton"
+            class="button danger-button"
+            type="button"
+            disabled
+          >
+            ⏹ Zatrzymaj wszystko
+          </button>
+
+        </div>
+
+      </article>
+
+      <article class="card custom-live-fx-card">
+
+        <div class="card-heading">
+          <div>
+            <span class="card-label">
+              CUSTOM LIVE FX v8.0
+            </span>
+
+            <h2>
+              ✨ Własny komunikat
+            </h2>
+          </div>
+        </div>
+
+        <p class="muted">
+          Przygotuj własny pełnoekranowy Show Moment
+          i wyświetl go na transmisji.
+        </p>
+
+        <div class="custom-live-fx-form">
+
+          <div class="live-fx-field">
+
+            <label for="customMomentTheme">
+              MOTYW
+            </label>
+
+            <select id="customMomentTheme">
+
+              <option value="follow">
+                ❤️ Follow
+              </option>
+
+              <option value="gift">
+                🎁 Gift
+              </option>
+
+              <option value="share">
+                🔵 Share
+              </option>
+
+              <option value="tap">
+                ❤️ Tap
+              </option>
+
+              <option value="record">
+                👑 Record
+              </option>
+
+              <option value="thanks">
+                💜 Thanks
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="live-fx-field">
+
+            <label for="customMomentIcon">
+              IKONA
+            </label>
+
+            <input
+              id="customMomentIcon"
+              type="text"
+              maxlength="10"
+              value="✨"
+            >
+
+          </div>
+
+          <div class="live-fx-field live-fx-field-wide">
+
+            <label for="customMomentCategory">
+              KATEGORIA
+            </label>
+
+            <input
+              id="customMomentCategory"
+              type="text"
+              maxlength="60"
+              value="SPECJALNY MOMENT"
+            >
+
+          </div>
+
+          <div class="live-fx-field live-fx-field-wide">
+
+            <label for="customMomentEyebrow">
+              NADTYTUŁ
+            </label>
+
+            <input
+              id="customMomentEyebrow"
+              type="text"
+              maxlength="100"
+              value="POLSKA NOSTALGIA LIVE"
+            >
+
+          </div>
+
+          <div class="live-fx-field live-fx-field-wide">
+
+            <label for="customMomentTitle">
+              GŁÓWNY NAGŁÓWEK
+            </label>
+
+            <input
+              id="customMomentTitle"
+              type="text"
+              maxlength="120"
+              placeholder="Np. DOBIJAMY 100 OSÓB!"
+            >
+
+          </div>
+
+          <div class="live-fx-field live-fx-field-wide">
+
+            <label for="customMomentDescription">
+              OPIS
+            </label>
+
+            <textarea
+              id="customMomentDescription"
+              rows="3"
+              maxlength="280"
+              placeholder="Np. Zaproś znajomego do wspólnej gry!"
+            ></textarea>
+
+          </div>
+
+          <div class="live-fx-field">
+
+            <label for="customMomentActionIcon">
+              IKONA CTA
+            </label>
+
+            <input
+              id="customMomentActionIcon"
+              type="text"
+              maxlength="10"
+              value="↗"
+            >
+
+          </div>
+
+          <div class="live-fx-field">
+
+            <label for="customMomentActionText">
+              CTA
+            </label>
+
+            <input
+              id="customMomentActionText"
+              type="text"
+              maxlength="80"
+              value="UDOSTĘPNIJ LIVE"
+            >
+
+          </div>
+
+          <div class="live-fx-field">
+
+            <label for="customMomentSecondaryIcon">
+              IKONA DODATKOWA
+            </label>
+
+            <input
+              id="customMomentSecondaryIcon"
+              type="text"
+              maxlength="10"
+              value="❤️"
+            >
+
+          </div>
+
+          <div class="live-fx-field">
+
+            <label for="customMomentSecondaryText">
+              TEKST DODATKOWY
+            </label>
+
+            <input
+              id="customMomentSecondaryText"
+              type="text"
+              maxlength="100"
+              value="DZIĘKUJEMY ZA WSPARCIE"
+            >
+
+          </div>
+
+          <div class="live-fx-field">
+
+            <label for="customMomentDuration">
+              CZAS
+            </label>
+
+            <select id="customMomentDuration">
+
+              <option value="5000">
+                5 sekund
+              </option>
+
+              <option
+                value="7000"
+                selected
+              >
+                7 sekund
+              </option>
+
+              <option value="8000">
+                8 sekund
+              </option>
+
+              <option value="10000">
+                10 sekund
+              </option>
+
+              <option value="15000">
+                15 sekund
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="live-fx-field">
+
+            <label for="customMomentPriority">
+              PRIORYTET
+            </label>
+
+            <select id="customMomentPriority">
+
+              <option value="40">
+                Niski
+              </option>
+
+              <option
+                value="60"
+                selected
+              >
+                Normalny
+              </option>
+
+              <option value="80">
+                Wysoki
+              </option>
+
+              <option value="100">
+                Bardzo wysoki
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+        <div class="custom-live-fx-actions">
+
+          <button
+            id="showCustomMomentButton"
+            class="button primary-button"
+            type="button"
+          >
+            ▶ POKAŻ NA LIVE
+          </button>
+
+          <button
+            id="resetCustomMomentButton"
+            class="button secondary-button"
+            type="button"
+          >
+            Wyczyść formularz
+          </button>
+
+        </div>
+
+      </article>
+
+      <article class="card current-round-card">
+
+        <div class="round-header">
+
+          <div>
+            <span class="card-label">
+              AKTUALNA RUNDA v8
+            </span>
+
+            <h2 id="roundHeading">
+              Quiz oczekuje
+            </h2>
+          </div>
+
+          <div class="round-badges">
+
+            <span id="roundNumber">
+              RUNDA 0
+            </span>
+
+            <span id="stageName">
+              IDLE
+            </span>
+
+          </div>
+        </div>
+
+        <div
+          id="emptyRound"
+          class="empty-round"
+        >
+          Wczytaj playlistę, uruchom Player
+          i kliknij START AUTO QUIZ.
+        </div>
+
+        <div
+          id="activeRound"
+          class="active-round hidden"
+        >
+
+          <div class="round-main">
+
+            <div class="cover-column">
+
+              <div class="cover-frame">
+
+                <img
+                  id="roundCover"
+                  class="round-cover blurred"
+                  alt="Okładka utworu"
+                  draggable="false"
+                >
+
+                <div
+                  id="coverQuestion"
+                  class="cover-question"
+                >
+                  ?
+                </div>
+
+              </div>
+
+              <div
+                id="playbackState"
+                class="playback-state"
+              >
+                <span class="playback-dot"></span>
+
+                <span>
+                  Przygotowywanie odtwarzania
+                </span>
+              </div>
+
+            </div>
+
+            <div class="question-column">
+
+              <div class="timer-row">
+
+                <div>
+                  <span class="information-label">
+                    POZOSTAŁY CZAS
+                  </span>
+
+                  <strong id="remainingTime">
+                    -
+                  </strong>
+                </div>
+
+                <div>
+                  <span class="information-label">
+                    POPRAWNE
+                  </span>
+
+                  <strong id="correctCounter">
+                    0 / 10
+                  </strong>
+                </div>
+
+              </div>
+
+              <h3 id="questionText">
+                Pytanie
+              </h3>
+
+              <div
+                id="answers"
+                class="answers"
+              ></div>
+
+              <div
+                id="hintBox"
+                class="hint-box hidden"
+              >
+                <span>
+                  💡 PODPOWIEDŹ
+                </span>
+
+                <strong id="hintText"></strong>
+              </div>
+
+            </div>
+
+          </div>
+
+          <section class="progress-section">
+
+            <div class="progress-track">
+              <div
+                id="progressValue"
+                class="progress-value"
+              ></div>
+            </div>
+
+            <div
+              id="voteBars"
+              class="vote-bars"
+            ></div>
+
+          </section>
+
+          <div
+            id="revealBox"
+            class="reveal-box hidden"
+          ></div>
+
+        </div>
+
+      </article>
+
+      <article class="card test-card">
+
+        <span class="card-label">
+          TRYB TESTOWY v8
+        </span>
+
+        <h2>
+          Symulator komentarzy
+        </h2>
+
+        <p class="muted">
+          Testuj głosowanie A, B, C i D bez publicznego LIVE.
+          Każda nazwa użytkownika może zagłosować raz
+          w aktualnej rundzie.
+        </p>
+
+        <div class="test-form">
+
+          <input
+            id="testUsername"
+            type="text"
+            maxlength="100"
+            autocomplete="off"
+            placeholder="Nazwa użytkownika, np. widz_01"
+          >
+
+          <input
+            id="testComment"
+            type="text"
+            maxlength="100"
+            autocomplete="off"
+            placeholder="Komentarz, np. A"
+          >
+
+          <button
+            id="sendTestCommentButton"
+            class="button primary-button"
+            type="button"
+          >
+            Wyślij komentarz
+          </button>
+
+        </div>
+
+        <div
+          id="recentVotes"
+          class="recent-votes"
+        ></div>
+
+      </article>
+
+      <article class="card leaderboard-card">
+
+        <span class="card-label">
+          RANKING LIVE
+        </span>
+
+        <h2>
+          🏆 Top gracze
+        </h2>
+
+        <p class="muted">
+          Punkty są naliczane automatycznie
+          za poprawne odpowiedzi w kolejnych rundach.
+        </p>
+
+        <div
+          id="leaderboard"
+          class="leaderboard"
+        ></div>
+
+      </article>
+
+    </section>
+
+  </main>
+
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+  <script
+    src="/app.js"
+    defer
+  ></script>
+</body>
+</html>
